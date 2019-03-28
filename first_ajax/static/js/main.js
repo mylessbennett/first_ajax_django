@@ -1,3 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const request = axios.get('http://intro-ajax-api.herokuapp.com/');
+    firstButton = document.getElementById('first-button')
+    firstButton.addEventListener('click', function() {
+        const request = axios.get('http://intro-ajax-api.herokuapp.com/');
+    })
 });
