@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const request = axios.get('http://intro-ajax-api.herokuapp.com/');
     });
 
-    // on click make get request to ping and display response data
+    // on click make get request to ping and display response data or errors
     secondButton = document.getElementById('second-button');
     secondButton.addEventListener('click', function() {
         const request = axios.get('http://intro-ajax-api.herokuapp.com/ping/')
@@ -25,5 +25,16 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(function() {
             console.log('Hey, the request finished!');
         })
-    })
+    });
+
+    // on click make get request to ping and display response data 
+    thirdButton = document.getElementById('third-button');
+    thirdButton.addEventListener('click', function() {
+        const request = axios.get('http://intro-ajax-api.herokuapp.com/count/')
+        .then(function(response) {
+            const sectionTwo = document.createElement('section');
+            sectionTwo.innerHTML = response.data;
+            document.body.appendChild(sectionTwo);
+        })
+    });
 });
